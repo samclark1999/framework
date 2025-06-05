@@ -1,0 +1,105 @@
+// BOOTSTRAP VERSION: 5.3.0
+
+// BOOTSTRAP ESSENTIALS
+@import "bare-bs-necessities";
+
+
+// STANDARD COMPONENTS
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/containers';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/transitions';
+
+// OPTIONAL COMPONENTS
+@import '~bootstrap/scss/dropdown';
+// @import '~bootstrap/scss/button-group';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+//@import '~bootstrap/scss/card';
+@import '~bootstrap/scss/accordion'; //TODO: Add to accordion block instead?
+// @import '~bootstrap/scss/breadcrumb';
+@import '~bootstrap/scss/pagination';
+//@import '~bootstrap/scss/badge';
+// @import '~bootstrap/scss/alert';
+// @import '~bootstrap/scss/progress';
+// @import '~bootstrap/scss/list-group';
+@import '~bootstrap/scss/close';
+// @import '~bootstrap/scss/toasts';
+@import '~bootstrap/scss/modal';
+// @import '~bootstrap/scss/tooltip';
+@import '~bootstrap/scss/popover';
+// @import '~bootstrap/scss/carousel';
+@import '~bootstrap/scss/spinners';
+ @import '~bootstrap/scss/offcanvas';
+@import '~bootstrap/scss/placeholders';
+
+// HELPERS - https://getbootstrap.com/docs/5.3/helpers/
+@import '~bootstrap/scss/helpers';
+
+// UTILITIES - https://getbootstrap.com/docs/5.3/utilities/api/
+@import '~bootstrap/scss/utilities/api';
+
+// BOOTSTRAP EXTENDS
+// Extend Bootstrap classes here and not in components to keep compiled CSS minimal
+//
+.wp-block-columns {
+	@extend .row;
+
+	&.alignfull {
+		width: 100vw;
+		margin-left: calc((var(--bs-gutter-x) * -0.5));
+
+		@include media-breakpoint-up(md) {
+			width: unset;
+			margin-left: calc((var(--bs-gutter-x) * -.5) - var(--scrollbar-width))
+		}
+
+		@include media-breakpoint-up(xl) {
+			width: calc(100vw - 96px);
+			margin-left: calc(-96px - (var(--bs-gutter-x) * .5) - var(--scrollbar-width));
+		}
+
+		> .wp-block-column {
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		
+	}
+
+	>.wp-block-column {
+		@extend .col-lg;
+	}
+}
+
+.hs-form {
+  input:not([type="submit"],[type="checkbox"],[type="radio"]), textarea, select {
+    @extend .form-control;
+  }
+
+  //input[type="submit"] {
+  //  @extend .btn, .btn-primary;
+  //}
+  input[type="radio"], input[type="checkbox"] {
+    @extend .form-check-input;
+  }
+}
+
+.justify-content-right {
+	@extend .justify-content-end;
+}
+
+.list-style-unstyled {
+	@extend .list-unstyled;
+}

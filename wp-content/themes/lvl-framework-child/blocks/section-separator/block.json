@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lvl/section-separator",
+	"title": "Section Separator",
+	"version": "1.0.0",
+	"description": "",
+	"category": "lvl-blocks",
+	"keywords": [
+		"columns",
+		"section",
+		"wrap"
+	],
+	"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-file-break-fill\" viewBox=\"0 0 16 16\">\n  <path d=\"M4 0h8a2 2 0 0 1 2 2v7H2V2a2 2 0 0 1 2-2M2 12h12v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zM.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1z\"/>\n</svg>",
+	"supports": {
+		"align": ["full"],
+		"alignWide": false,
+		"textAlign": true,
+		"anchor": true,
+		"fullHeight": false,
+		"html": true,
+		"mode": false,
+		"renaming": true,
+		"color": {
+			"text": false,
+			"gradients": false,
+			"background": false
+		},
+		"spacing": {
+			"padding": ["top", "bottom"],
+			"margin": ["top", "bottom"]
+		},
+		"background": {
+			"backgroundImage": false,
+			"backgroundSize": false
+		}
+	},
+	"style": "lvl-block-css-section-separator",
+  "editorScript": "lvl-block-js-section-separator-editor",
+  "viewScript": [
+    "lvl-block-js-section-separator"
+  ],
+	"acf": {
+        "mode": "preview",
+        "renderTemplate": "section-separator.php",
+		"blockVersion": 2
+    }
+}

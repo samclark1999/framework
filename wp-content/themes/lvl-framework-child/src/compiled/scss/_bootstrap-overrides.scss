@@ -1,0 +1,53 @@
+// Bootstrap color overrides generated from theme.json
+
+$gray-100: #E8E8ED !default;
+$success: #69B779 !default;
+$white: #FFFFFF !default;
+$dark: #0E1832 !default;
+$secondary: #E9C361 !default;
+$black: #000000 !default;
+$danger: #FF0000 !default;
+$primary: #4D57A5 !default;
+$gray-800: #5E6468 !default;
+$gray-600: #909394 !default;
+
+// Custom theme color variable mappings
+$custom-theme-colors: (
+  "gray-100": #E8E8ED,
+  "white": #FFFFFF,
+  "black": #000000,
+  "gray-800": #5E6468,
+  "gray-600": #909394,
+) !default;
+// Bootstrap typography overrides generated from theme.json
+
+$font-size-root: 18.0px !default;
+$font-size-base: 1rem !default;
+$h1-font-size: $font-size-base * 2.889 !default;
+$h2-font-size: $font-size-base * 2.222 !default;
+$h3-font-size: $font-size-base * 1.556 !default;
+$h4-font-size: $font-size-base * 1.333 !default;
+$h5-font-size: $font-size-base * 1.111 !default;
+$h6-font-size: $font-size-base * 1.000 !default;
+// Gradient variables generated from theme.json
+
+$gradients: (
+  "navy-purple-dark": (
+    "deg": 180deg,
+    "start": #0E1832,
+    "end": #4D57A5
+  ),
+  "navy-green-dark": (
+    "deg": 180deg,
+    "start": #0E1832,
+    "end": #69B779
+  ),
+  "purple-green-dark": (
+    "deg": 180deg,
+    "start": #4D57A5,
+    "end": #69B779
+  ),
+) !default;
+
+// WordPress creates CSS variables like: --wp--preset--gradient--gradient-navy-purple-dark
+// Class to use WordPress variable: .has-gradient-navy-purple--dark-gradient-background

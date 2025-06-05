@@ -1,0 +1,217 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--team {
+  --card-width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    &.overflow-to-edge {
+      width: calc((100vw - var(--container-width, 0)) * .5 + 100% + (calc(var(--bs-gutter-x))));
+
+      &[data-layout="grid"] {
+        padding-right: var(--bs-gutter-x, 1rem);
+      }
+    }
+  }
+
+  .team {
+    .modal-button {
+      position: absolute;
+      display: inline-block;
+      bottom: -2px;
+      right: -2px;
+      align-self: flex-end;
+      margin-top: auto;
+      padding: 4px;
+      background: var(--white);
+      border: 2px solid transparent;
+      border-radius: 50%;
+      transition: border-color .3s ease;
+
+      &:hover {
+        border-color: var(--primary-blue);
+        transition: border-color .3s ease;
+      }
+
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .spinner {
+      color: var(--gray-200);
+    }
+
+    .load-more {
+      display: none;
+    }
+  }
+
+  .team-members.layout-grid {
+    display: flex;
+    list-style: none;
+    margin-bottom: 4rem;
+    padding: 0;
+
+    flex-wrap: wrap;
+    gap: 1.5rem 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .member {
+      flex: 1 1 var(--card-width, 100%);
+      max-width: var(--card-width, 100%);
+      align-self: stretch;
+      //height: auto !important;
+      //padding: 0 calc(.5 * var(--bs-gutter-x));
+
+      @include media-breakpoint-up(md) {
+        --card-width: 50%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        --card-width: calc(100% / (var(--card-count, 4) - 1))
+      }
+
+      @include media-breakpoint-up(xl) {
+        --card-width: calc(100% / var(--card-count, 4));
+      }
+
+      position: relative;
+      margin-top: 0;
+      //overflow: hidden;
+      transform: scale(1);
+      transition: transform .15s ease-in-out, box-shadow .3s ease-in-out;
+      backface-visibility: hidden;
+    }
+  }
+
+  .member-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bs-white);
+    border: 1px solid var(--bs-gray-300);
+    border-radius: var(--bs-border-radius);
+    //box-shadow: var(--bs-box-shadow-sm);
+    //box-shadow: 0px 4px 15px 5px rgba(38, 38, 43, 0.15);
+    overflow: hidden;
+
+    .img {
+      position: relative;
+
+      img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .info {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 0 calc(.5 * var(--bs-gutter-x));
+      margin: 1rem;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .btn-arrow {
+        align-self: flex-start;
+      }
+
+    }
+
+  }
+
+  .swiper-slide {
+    height: initial;
+  }
+
+  .swiper-navigation {
+    display: flex;
+    justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+      justify-content: flex-start;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      position: relative;
+      top: initial;
+      margin: 0;
+      transform: initial;
+      width: 47px;
+      height: 47px;
+      //color: var(--bs-white);
+      //background-color: var(--bs-primary);
+      padding: 16px;
+
+      &:hover, &:focus {
+        filter: none;
+      }
+    }
+
+    .swiper-button-disabled {
+      background-color: #CFD0D4;
+      border-color: #CFD0D4;
+    }
+  }
+}
+
+.team-modal {
+
+  .modal-header {
+    padding-bottom: 0;
+    border-bottom: none;
+
+    button {
+      margin-left: auto;
+      background: none;
+      border: none;
+    }
+  }
+
+  .modal-body {
+    padding-top: 0;
+
+    .modal--avatar-wrapper {
+      position: relative;
+      aspect-ratio: 1/1;
+      padding: 1rem;
+
+      .avatar {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        object-position: top center;
+        //border-radius: 50%;
+      }
+    }
+
+    .modal--team-name {
+
+    }
+
+    .modal--team-role {
+      font-weight: 600;
+    }
+  }
+}
+
+.editor-styles-wrapper {
+  .block--team {
+
+  }
+}

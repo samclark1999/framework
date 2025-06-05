@@ -1,0 +1,91 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--cards-card {
+	--card-width: 100%;
+	--bs-border-width: 2px;
+	//overflow: hidden;
+
+	.cards>& {
+		flex: 1 1 var(--card-width, 100%);
+		max-width: calc(var(--card-width, 100%) - var(--bs-gutter-x));
+		align-self: stretch;
+		//height: auto !important;
+		padding: 0 calc(1 * var(--bs-gutter-x));
+
+		@include media-breakpoint-up(md) {
+			--card-width: 50%;
+			padding: 0 calc(.5 * var(--bs-gutter-x));
+		}
+
+		@include media-breakpoint-up(lg) {
+			--card-width: calc(100% / (var(--card-count, 4) - 1))
+		}
+
+		@include media-breakpoint-up(xl) {
+			--card-width: calc(100% / var(--card-count, 4));
+		}
+	}
+
+	.card-wrapper {
+		height: 100%;
+
+		.card-inner {
+			height: 100%;
+
+			.card-body {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+			}
+		}
+	}
+
+	.wp-block-heading.has-background {
+		padding: .5em 1rem;
+		margin: 0 calc(-1 * var(--bs-spacer-3, -1rem));
+	}
+}
+
+.editor-styles-wrapper {
+
+	.wp-block>.block--cards-card {
+		height: 100%;
+	}
+
+	.block--cards-card {
+		//width: 100% !important;
+		//height: 100% !important;
+
+
+		.card-inner {
+			min-width: initial;
+			border: 0;
+			background-color: transparent;
+
+			&.layout-circle {
+				overflow: visible;
+			}
+
+			//&.has-banner > .card-body > div:first-child > .wp-block-image:first-child {
+			//  //margin: calc(-1 * var(--bs-spacer-3, 1rem)) calc(-1 * var(--bs-spacer-3, 1rem)) 1rem;
+			//  margin: -44px -59px 0;
+			//  overflow: hidden;
+			//
+			//  > div:first-child {
+			//    width: 100% !important;
+			//
+			//    &[style*="height: auto"] {
+			//      height: 150px !important;
+			//    }
+			//
+			//    img {
+			//      width: 100%;
+			//      height: 100%;
+			//      object-fit: cover;
+			//      object-position: center;
+			//    }
+			//  }
+			//}
+		}
+	}
+}

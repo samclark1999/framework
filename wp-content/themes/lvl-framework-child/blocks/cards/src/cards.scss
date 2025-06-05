@@ -1,0 +1,139 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--cards {
+  --card-count: 4;
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem var(--bs-gutter-x);
+  }
+
+  .card-wrapper:has(.flex-fill),
+  .card-wrapper:has(.flex-fill) div:where(.card-body, .card-inner, .wp-block-group:has(.flex-fill)) {
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper-slide {
+    //height: initial;
+  }
+
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 1rem;
+
+    .swiper-pagination-bullet {
+      position: relative;
+      display: inline-block;
+      flex: 0 0 25px;
+      height: 3px;
+      background-color: var(--bs-gray-300);
+
+      &-active {
+        background-color: var(--bs-primary);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &::after { // accessibility interaction spacing
+        content: "";
+        display: block;
+        height: 22px;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        top: -9px;
+      }
+    }
+  }
+}
+
+.editor-styles-wrapper {
+
+  .block--cards {
+    --card-width: 100%;
+
+    @include media-breakpoint-up(md) {
+      --card-width: calc(100% / max(1, (var(--card-count, 4) - 2)))
+    }
+
+    @include media-breakpoint-up(lg) {
+      --card-width: calc(100% / (var(--card-count, 4) - 1))
+    }
+
+    @include media-breakpoint-up(xl) {
+      --card-width: calc(100% / var(--card-count, 4));
+    }
+
+
+    .cards {
+
+      &[class*="justify-content-"] {
+        > .acf-innerblocks-container {
+          justify-content: inherit;
+        }
+      }
+
+      > .acf-innerblocks-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 1.5rem calc(var(--bs-gutter-x) * 2);
+
+        > .wp-block-lvl-cards-card {
+          flex: 1 1 var(--card-width, 100%);
+          max-width: calc(var(--card-width, 100%) - calc(var(--bs-gutter-x) * 2));
+
+
+          //flex: 0 0 25%;
+          margin-bottom: 1.5rem;
+
+          padding: calc(var(--bs-gutter-x) / 2);
+          //background-clip: content-box;
+        }
+      }
+
+      > .block--cards-card {
+        flex: 1 1 var(--card-width, 100%);
+        max-width: var(--card-width, 100%);
+
+        //flex: 0 0 25%;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .swiper-wrapper.--auto {
+      display: grid;
+      grid-template-columns: repeat(var(--card-count, 4), 1fr);
+      gap: 1.5rem var(--bs-gutter-x, 1.5rem);
+    }
+
+    .swiper-wrapper.--manual {
+      > .acf-innerblocks-container {
+        display: grid;
+        grid-template-columns: repeat(var(--card-count, 4), 1fr);
+        gap: 1.5rem var(--bs-gutter-x, 1.5rem);
+      }
+    }
+
+
+    .swiper-pagination, .swiper-button-next, .swiper-button-prev {
+      display: none;
+    }
+
+    &.--preview {
+      .swiper:not(.swiper-initialized) .swiper-wrapper .swiper-slide:nth-child(n+2) {
+        display: block;
+      }
+    }
+  }
+}

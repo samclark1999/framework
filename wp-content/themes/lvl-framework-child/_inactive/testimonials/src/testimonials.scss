@@ -1,0 +1,279 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--testimonials {
+	position: relative;
+	//padding: 1rem 2.5rem;
+	//
+	//@include media-breakpoint-up(md) {
+	//	padding: 1rem 5rem;
+	//}
+
+	.testimonials {
+		position: relative;
+
+    //&::after {
+    //  content: "";
+    //  position: absolute;
+    //  background: var(--bs-secondary);
+    //  width: 100%;
+    //  height: 100%;
+    //}
+    //
+    //&::after {
+    //  background: var(--bs-white);
+    //  left: 0;
+    //  bottom: 0;
+    //  z-index: 0;
+    //}
+	}
+
+	.testimonials--wrapper {
+		z-index: 1;
+		position: relative;
+	}
+
+  .swiper-slide {
+    height: initial;
+    align-self: stretch;
+
+    @include media-breakpoint-up(md) {
+      > .row {
+        height: 100%;
+
+        > [class*="col-"] {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+	.testimonial {
+		opacity: 1;
+		transition: opacity .5s linear;
+		position: relative;
+    overflow: hidden;
+
+		blockquote {
+			position: relative;
+			//text-align: center;
+			//padding: 0 2.1rem;
+      font-size: clamp(1rem, 2.5vw, 24px);
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.5;
+
+			@include media-breakpoint-up(md) {
+				//padding: 0 3rem;
+			}
+		}
+
+		figure {
+			position: relative;
+      color: var(--bs-primary);
+
+			//&::before, &::after {
+			//	background-image: url(escape-svg('data:image/svg+xml; utf8, <svg fill="none" height="100" viewBox="0 0 31 25" width="100" xmlns="http://www.w3.org/2000/svg"><path d="m7.2125 12.2625c2.325 0 4.075.5375 5.25 1.6125 1.2 1.075 1.8 2.55 1.8 4.425s-.6625 3.425-1.9875 4.65c-1.325 1.2-2.9625 1.8-4.9125 1.8-2.025 0-3.75-.7375-5.175-2.2125s-2.1375-3.6625-2.1375-6.5625c0-2.75.45-5.1875 1.35-7.3125s2.1875-3.875 3.8625-5.25c1.675-1.4 3.6625-2.3625 5.9625-2.887503.525-.150001.9375-.162502 1.2375-.037502.325.100002.525.300002.6.600005.05.3-.0125.575-.1875.825s-.5375.4625-1.0875.6375c-1.825.55-3.3125 1.3125-4.4625 2.2875-1.15.95-1.9875 1.975-2.5125 3.075-.5 1.1-.75 2.1-.75 3 0 .425.1125.7625.3375 1.0125.225.225.6375.3375 1.2375.3375zm16.35-.0375c2.35 0 4.1125.5375 5.2875 1.6125s1.7625 2.55 1.7625 4.425-.6625 3.425-1.9875 4.65c-1.325 1.2-2.9625 1.8-4.9125 1.8-2.025 0-3.75-.7375-5.175-2.2125s-2.1375-3.6625-2.1375-6.5625c0-2.75.45-5.1875 1.35-7.3125s2.1875-3.875 3.8625-5.25c1.675-1.4 3.6625-2.3625 5.9625-2.887505.525-.149998.9375-.162497 1.2375-.037497.325.099998.525.312498.6.637502.05.275-.0125.5375-.1875.7875s-.5375.475-1.0875.675c-1.825.525-3.3125 1.275-4.4625 2.25-1.125.975-1.95 2.0125-2.475 3.1125-.525 1.075-.7875 2.0625-.7875 2.9625 0 .425.1125.7625.3375 1.0125.225.225.6375.3375 1.2375.3375z" fill="#{$primary}"/></svg>'));
+			//	//background-image: url('data:image/svg+xml; utf8, %3csvg fill="none" height="50" viewBox="0 0 31 25" width="50" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="m7.2125 12.2625c2.325 0 4.075.5375 5.25 1.6125 1.2 1.075 1.8 2.55 1.8 4.425s-.6625 3.425-1.9875 4.65c-1.325 1.2-2.9625 1.8-4.9125 1.8-2.025 0-3.75-.7375-5.175-2.2125s-2.1375-3.6625-2.1375-6.5625c0-2.75.45-5.1875 1.35-7.3125s2.1875-3.875 3.8625-5.25c1.675-1.4 3.6625-2.3625 5.9625-2.887503.525-.150001.9375-.162502 1.2375-.037502.325.100002.525.300002.6.600005.05.3-.0125.575-.1875.825s-.5375.4625-1.0875.6375c-1.825.55-3.3125 1.3125-4.4625 2.2875-1.15.95-1.9875 1.975-2.5125 3.075-.5 1.1-.75 2.1-.75 3 0 .425.1125.7625.3375 1.0125.225.225.6375.3375 1.2375.3375zm16.35-.0375c2.35 0 4.1125.5375 5.2875 1.6125s1.7625 2.55 1.7625 4.425-.6625 3.425-1.9875 4.65c-1.325 1.2-2.9625 1.8-4.9125 1.8-2.025 0-3.75-.7375-5.175-2.2125s-2.1375-3.6625-2.1375-6.5625c0-2.75.45-5.1875 1.35-7.3125s2.1875-3.875 3.8625-5.25c1.675-1.4 3.6625-2.3625 5.9625-2.887505.525-.149998.9375-.162497 1.2375-.037497.325.099998.525.312498.6.637502.05.275-.0125.5375-.1875.7875s-.5375.475-1.0875.675c-1.825.525-3.3125 1.275-4.4625 2.25-1.125.975-1.95 2.0125-2.475 3.1125-.525 1.075-.7875 2.0625-.7875 2.9625 0 .425.1125.7625.3375 1.0125.225.225.6375.3375 1.2375.3375z" fill="%2300ab4e"/%3e%3c/svg%3e');
+			//	position: absolute;
+			//	content: "";
+			//	background-size: contain;
+			//	background-position: center;
+			//}
+			//
+			//&::before {
+			//	top: 0;
+			//	left: 0;
+			//	width: 3rem;
+			//	height: 3rem;
+			//	transform: translate(50%, -66%);
+			//}
+			//
+			//&::after {
+			//	bottom: 0;
+			//	right: 0;
+			//	width: 3rem;
+			//	height: 3rem;
+			//	transform: rotate(180deg) translate(50%, -66%);
+			//}
+		}
+
+		figcaption {
+      color: var(--bs-body-color);
+			padding: 0;
+
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.5;
+
+			//:first-child {
+			//	&::before {
+			//		content: '— ';
+			//		position: relative;
+			//		display: inline;
+			//	}
+			//}
+
+			//.author {
+			//	display: block;
+			//}
+
+			span {
+				//font-size: .8rem;
+				//font-style: italic;
+				line-height: 1;
+				//color: $gray-300;
+
+				+ span {
+
+					&::before {
+						content: ' | ';
+						position: relative;
+						display: inline-block;
+						margin: 0 .25rem;
+						//left: -2px;
+					}
+				}
+			}
+
+			//.company {
+			//	font-size: .8rem;
+			//	font-style: italic;
+			//	line-height: 1;
+			//	//color: $gray-300;
+			//}
+		}
+		
+	}
+
+	.testimonials--navigation {
+		z-index: 2;
+    //position: relative;
+	}
+
+	.swiper-wrapper {
+		.testimonial:not(.swiper-slide-active) {
+			opacity: 0;
+			transition: opacity .25s linear;
+		}
+	}
+
+	.swiper-button {
+    //position: relative;
+    display: none;
+		align-items: center;
+		justify-content: center;
+		top: 50%;
+		z-index: 1;
+		//height: 32px;
+		width: 32px;
+		transform: initial;
+
+		line-height: 1;
+		height: min-content;
+		margin-top: 0;
+
+		@include media-breakpoint-up(md) {
+			display: flex;
+		}
+
+		&::before {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+
+		&.swiper-button-prev {
+			left: 0;
+			order: 0;
+
+			@include media-breakpoint-up(md) {
+				order: 1;
+        transform: translate(calc(-100% - 11px), -100%);
+      }
+      @include media-breakpoint-up(lg) {
+        order: 1;
+        transform: translate(calc(-100% - 44px), -100%);
+			}
+
+			&::before {
+
+        content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40' viewBox='0 0 25 44' fill='none'%3E%3Cpath d='M23 2L3 22L23 42' stroke='#{$dark}' stroke-width='4' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E"));
+
+        [data-bs-theme="dark"] & {
+          content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40' viewBox='0 0 25 44' fill='none'%3E%3Cpath d='M23 2L3 22L23 42' stroke='#{white}' stroke-width='4' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E"));
+        }
+			}
+
+		}
+
+		&.swiper-button-next {
+			right: 0;
+			order: 2;
+
+      @include media-breakpoint-up(md) {
+        transform: translate(calc(100% + 11px), -100%);
+      }
+      @include media-breakpoint-up(lg) {
+        transform: translate(calc(100% + 44px), -100%);
+      }
+
+			&::before {
+        content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40' viewBox='0 0 25 44' fill='none'%3E%3Cpath d='M2 2L22 22L2 42' stroke='#{$dark}' stroke-width='4' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E"));
+				text-align: right;
+
+        [data-bs-theme="dark"] & {
+          content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40' viewBox='0 0 25 44' fill='none'%3E%3Cpath d='M2 2L22 22L2 42' stroke='#{white}' stroke-width='4' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E"));
+        }
+			}
+
+		}
+	}
+
+	.swiper-pagination {
+		flex: 1 1 100%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 5px;
+		margin-top: 0;
+		order: 1;
+
+		@include media-breakpoint-up(md) {
+      //justify-content: start;
+			order: 0;
+		}
+
+		.swiper-pagination-bullet {
+			display: inline-block;
+			flex: 0 0 11px;
+			height: 11px;
+			width: 11px;
+			border-radius: 50%;
+			//background-color: $gray-300;
+
+			&::after {
+				height: 100%;
+				width: 100%;
+			}
+
+			&-active {
+				//background-color: $primary-green;
+			}
+		}
+	}
+}
+
+.editor-styles-wrapper {
+	
+	.block--testimonials {
+
+		.testimonial {
+			opacity: 1;
+
+			//&:not(:first-child) {
+			//	display: none;
+			//}
+		}
+	}
+}

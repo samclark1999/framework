@@ -1,0 +1,12 @@
+.pagination .page-numbers {
+  border: 0;
+}
+
+.search .pagination .nav-links {
+  border: 0;
+}
+
+.search .pagination .nav-links .page-numbers.current {
+  background: transparent;
+  color: var(--wp--preset--color--dark);
+}

@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lvl/post-listing",
+	"title": "Posts Listing",
+	"version": "1.0.0",
+	"description": "Display post in cards with filters. Pick from standard post types or custom post types.",
+	"category": "lvl-blocks",
+	"keywords": [
+		"resources",
+		"cards",
+		"blog",
+		"archive",
+		"post",
+		"listing",
+		"filter"
+	],
+	"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-collection\" viewBox=\"0 0 16 16\">\n  <path d=\"M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z\"/>\n</svg>",
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"fullHeight": true,
+		"html": true,
+		"mode": false,
+		"spacing": {
+			"padding": true,
+			"margin": true
+		}
+	},
+	"style": "lvl-block-css-post-listing",
+	"viewScript": ["lvl-block-js-post-listing"],
+	"editorScript": ["lvl-block-js-post-listing-editor"],
+	"acf": {
+        "mode": "preview",
+        "renderTemplate": "post-listing.php",
+		"blockVersion": 2
+    }
+}

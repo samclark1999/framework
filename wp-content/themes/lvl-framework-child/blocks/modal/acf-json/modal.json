@@ -1,0 +1,107 @@
+{
+  "key": "group_modal",
+  "title": "Block - Modal",
+  "fields": [
+    {
+      "key": "field_modal_type",
+      "label": "Type",
+      "name": "type",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Select the type of modal",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "modal": "Popup",
+        "offcanvas": "Sidebar"
+      },
+      "default_value": "modal",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_modal_size",
+      "label": "Size",
+      "name": "modal_size",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "choices": {
+        "sm": "Small",
+        "md": "Medium",
+        "lg": "Large",
+        "xl": "XLarge"
+      },
+      "conditional_logic": [
+        {
+          "field": "field_modal_type",
+          "operator": "==",
+          "value": "modal"
+        }
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "md",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_sidebar_width",
+      "label": "Sidebar Width",
+      "name": "offcanvas_width",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "Include units (px, %, vw, etc.)",
+      "required": 0,
+      "conditional_logic": [
+        {
+          "field": "field_modal_type",
+          "operator": "==",
+          "value": "offcanvas"
+        }
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "lvl\/modal"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1713820075
+}

@@ -1,0 +1,88 @@
+:root {
+  --login-logo: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 25.4.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 187.049 280.144' style='enable-background:new 0 0 187.049 280.144;' xml:space='preserve'%3E%3Cpath d='M8.543,200.057c-4.709,0-8.543-3.829-8.543-8.538s3.834-8.54,8.543-8.54h169.968c4.709,0,8.538,3.832,8.538,8.54 s-3.829,8.538-8.538,8.538H8.543z M178.511,169.559c4.709,0,8.538-3.829,8.538-8.538s-3.829-8.538-8.538-8.538H8.543 c-4.709,0-8.543,3.829-8.543,8.538s3.834,8.538,8.543,8.538H178.511z M98.489,139.063c4.709,0,8.538-3.829,8.538-8.538 c0-4.709-3.829-8.538-8.538-8.538H8.543c-4.709,0-8.543,3.829-8.543,8.538c0,4.709,3.834,8.538,8.543,8.538H98.489z M98.489,108.567 c4.709,0,8.538-3.829,8.538-8.538s-3.829-8.54-8.538-8.54H8.543C3.834,91.489,0,95.321,0,100.03s3.834,8.538,8.543,8.538H98.489z M98.489,78.069c4.709,0,8.538-3.829,8.538-8.538s-3.829-8.538-8.538-8.538H8.543C3.834,60.994,0,64.823,0,69.531 s3.834,8.538,8.543,8.538H98.489z M98.489,47.574c4.709,0,8.538-3.829,8.538-8.538s-3.829-8.54-8.538-8.54H8.543 C3.834,30.496,0,34.327,0,39.036s3.834,8.538,8.543,8.538H98.489z M98.489,17.078c4.709,0,8.538-3.832,8.538-8.54 S103.198,0,98.489,0H8.543C3.834,0,0,3.829,0,8.538s3.834,8.54,8.543,8.54H98.489z M2.995,280.142v-37.446h10.953v28.596h19.045 v8.85H2.995z M68.833,280.142v-8.745H49.574v-5.788h18.733v-8.43H49.574v-5.737h19.259v-8.745H38.621v37.446H68.833z M149.268,280.144v-8.745h-19.255v-5.789h18.734v-8.431h-18.734v-5.738h19.255v-8.745h-30.209v37.448H149.268z M185.844,280.142 v-8.85H166.8v-28.596h-10.953v37.446H185.844z M102.284,280.144l13.535-37.448h-11.567l-9.428,27.707l-0.51,4.238h-0.735 l-0.468-4.275l-9.471-27.67H72.072l13.534,37.448H102.284z'/%3E%3C/svg%3E%0A");
+}
+
+
+// BOOTSTRAP ESSENTIALS
+@import "bare-bs-necessities";
+@import '~bootstrap/scss/root';
+
+#login {
+  width: 300px;
+  padding: 10%;
+   background: white;
+  max-width: 100%;
+   box-shadow: 0 30px 20px -10px rgba(0, 0, 0, .25);
+
+  [href="https://wordpress.org/"] {
+    pointer-events: none;
+  }
+}
+
+body.login {
+   background-color: var(--bs-primary);
+
+  #login h1 a {
+    display: block;
+    width: 80%;
+    height: 150px;
+    background-image: var(--login-logo);
+    background-size: contain;
+    background-position: center;
+  }
+
+  #nav {
+    a {
+      &:hover,
+      &:focus,
+      &:active {
+        //
+      }
+    }
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="checkbox"]:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 2px rgba(var(--bs-primary-rgb), 0.8);
+  }
+
+  input[type="checkbox"]:checked::before {
+    color: var(--bs-primary);
+  }
+
+  .button-primary {
+
+    padding: 1px 28px !important;
+    background-color: var(--bs-primary) !important;
+    border: 0;
+    color: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: none;
+    text-shadow: none;
+    height: 32px !important;
+    transition: all .15s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
+      background-color: var(--bs-primary-text-emphasis) !important;
+      outline: none;
+      transform: none;
+    }
+
+  }
+
+  .privacy-policy-link {
+    &:hover,
+    &:focus,
+    &:active {
+      //
+    }
+
+  }
+
+}

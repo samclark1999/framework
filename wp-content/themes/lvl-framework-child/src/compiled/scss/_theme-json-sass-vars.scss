@@ -1,0 +1,74 @@
+// Variables generated from theme.json
+
+$palette: (
+  brand-gray-100: #E8E8ED,
+  brand-success: #69B779,
+  brand-white: #FFFFFF,
+  brand-dark: #0E1832,
+  brand-secondary: #E9C361,
+  brand-black: #000000,
+  brand-danger: #FF0000,
+  brand-primary: #4D57A5,
+  brand-gray-800: #5E6468,
+  brand-gray-600: #909394,
+);
+$wpPalette: (
+  gray-100: #E8E8ED,
+  success: #69B779,
+  white: #FFFFFF,
+  dark: #0E1832,
+  secondary: #E9C361,
+  black: #000000,
+  danger: #FF0000,
+  primary: #4D57A5,
+  gray-800: #5E6468,
+  gray-600: #909394,
+);
+$brand-gray-100: #E8E8ED;
+$brand-success: #69B779;
+$brand-white: #FFFFFF;
+$brand-dark: #0E1832;
+$brand-secondary: #E9C361;
+$brand-black: #000000;
+$brand-danger: #FF0000;
+$brand-primary: #4D57A5;
+$brand-gray-800: #5E6468;
+$brand-gray-600: #909394;
+$headings: (
+	("h1",
+	var(--wp--preset--font-family--heading),
+	var(--wp--preset--font-size--h-1),
+	600 !important,
+	1.1 !important,
+	inherit),
+	("h2",
+	var(--wp--preset--font-family--heading),
+	var(--wp--preset--font-size--h-2),
+	600 !important,
+	1.15 !important,
+	inherit),
+	("h3",
+	var(--wp--preset--font-family--heading),
+	var(--wp--preset--font-size--h-3),
+	600 !important,
+	1.2 !important,
+	inherit),
+	("h4",
+	var(--wp--preset--font-family--heading),
+	var(--wp--preset--font-size--h-4),
+	600 !important,
+	1.2 !important,
+	inherit),
+	("h5",
+	var(--wp--preset--font-family--body),
+	var(--wp--preset--font-size--h-5),
+	600 !important,
+	1.2 !important,
+	inherit),
+	("h6",
+	var(--wp--preset--font-family--body),
+	var(--wp--preset--font-size--h-6),
+	600 !important,
+	1.2 !important,
+	inherit),
+);

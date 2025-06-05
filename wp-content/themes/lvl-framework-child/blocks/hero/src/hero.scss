@@ -1,0 +1,206 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.block--hero {
+
+  &.--preview {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: var(--min-height);
+  }
+
+  --min-height: calc(var(--hero-min-height, 400px) * .5);
+  position: relative;
+  min-height: var(--min-height);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    --min-height: calc(var(--hero-min-height, 400px) * .75);
+  }
+
+  @include media-breakpoint-up(lg) {
+    --min-height: var(--hero-min-height, 400px);
+  }
+
+  &.--video-bg {
+
+    .video-wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      animation: fadein 2s;
+
+      iframe {
+        width: 100%;
+        //height: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &:not(.--preview) {
+    .swiper {
+      &:not(.swiper-initialized) {
+        height: 100%;
+        min-height: var(--min-height);
+        overflow: hidden;
+
+        .block--banner {
+          width: 100%;
+        }
+
+        .block--banner:nth-child(n+2) {
+          display: none;
+        }
+
+        img {
+          display: none;
+        }
+
+        .swiper-button-prev, .swiper-button-next, .swiper-pagination {
+          display: none;
+        }
+
+        .banner-wrapper:nth-child(n + 2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.--overlay {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      //opacity: .25;
+      z-index: 1;
+      //background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.25) 71.8%, rgba(0, 0, 0, 0.25) 93.14%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 42.72%, rgba(0, 0, 0, 0.75) 95.86%);
+    }
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+
+    .wp-block-heading {
+      //text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.50);
+    }
+  }
+
+  .hero-images {
+    overflow: hidden;
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: 0;
+  }
+
+  .hero-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    min-height: var(--hero-min-height);
+  }
+
+  .hero-annotation-display {
+    position: absolute;
+    max-width: 200px;
+    line-height: 1.05em;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+
+    a {
+      color: var(--bs-body-color);
+      text-decoration: none;
+      font-size: .8rem;
+      font-weight: 700;
+
+      &:hover, &:focus {
+        text-decoration: dashed;
+      }
+    }
+  }
+
+  .swiper-slide {
+    .hero-annotation {
+      display: none;
+      pointer-events: none;
+    }
+  }
+
+  .swiper {
+
+    .swiper-button-prev, .swiper-button-next {
+      background: transparent;
+      opacity: 0;
+      transition: background 0.25s, opacity 0.25s;
+
+      @include media-breakpoint-up(md) {
+        opacity: 1;
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      .swiper-button-prev, .swiper-button-next {
+        background: var(--bs-light);
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    z-index: 2;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+      //box-shadow: 0 0 0 1px var(--bs-dark);
+    }
+  }
+
+  .swiper-notification {
+    @include visually-hidden;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    width: 60px;
+    height: 80px;
+    color: var(--bs-dark);
+    transform: initial;
+  }
+
+  .block--banner {
+    flex: 1 1 100%;
+  }
+
+  .block--banner--wrapper {
+    height: initial;
+  }
+}

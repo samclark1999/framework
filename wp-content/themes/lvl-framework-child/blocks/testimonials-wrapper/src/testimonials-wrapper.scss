@@ -1,0 +1,143 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--testimonials-wrapper {
+
+	// background-color: $white;
+
+	.swiper {
+		position: relative;
+		// left: calc( (100vw - 100%) / -2 );
+		// width: 100vw;
+		padding-top: 1rem;
+
+		left: unset;
+		width: 100%;
+
+		// @include media-breakpoint-up(lg) {
+		// 	border-left: 1px solid #eee;
+		// 	border-right: 1px solid #eee;
+
+		// 	&::before {
+		// 		content: '';
+		// 		display: block;
+		// 		position: absolute;
+		// 		left: 0;
+		// 		top: 50%;
+		// 		z-index: 2;
+		// 		width: 2rem;
+		// 		height: 85%;
+		// 		background: rgba($black, .25);
+		// 		filter: blur(1rem);
+		// 		transform: translate(-50%, -50%);
+		// 	}
+
+		// 	&::after {
+		// 		content: '';
+		// 		display: block;
+		// 		position: absolute;
+		// 		right: 0;
+		// 		top: 50%;
+		// 		z-index: 2;
+		// 		width: 2rem;
+		// 		height: 85%;
+		// 		background: rgba($black, .25);
+		// 		filter: blur(1rem);
+		// 		transform: translate(50%, -50%);
+		// 	}
+		// }
+	}
+
+	.swiper-button {
+		position: absolute;
+		display: block;
+		top: 50%;
+		z-index: 1;
+		height: 31px;
+		width: 31px;
+		transform: translateY(-50%);
+
+		&.swiper-button-prev, &.swiper-button-next {
+			svg {
+				min-width: 31px;
+				width: 31px;
+				height: 31px;
+			}
+		}
+
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+
+		&.swiper-button-prev {
+			left: 0;
+
+			// @include media-breakpoint-down(xxl) {
+			// 	left: 14%;
+			// }
+
+			// @include media-breakpoint-down(xl) {
+			// 	left: 8%;
+			// }
+		}
+
+		&.swiper-button-next {
+			right: 0;
+
+			// @include media-breakpoint-down(xxl) {
+			// 	right: 14%;
+			// }
+
+			// @include media-breakpoint-down(xl) {
+			// 	right: 8%;
+			// }
+		}
+	}
+
+	.swiper-pagination {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 5px;
+		margin-top: 2rem;
+
+		.swiper-pagination-bullet {
+			position: relative;
+			display: inline-block;
+			flex: 0 0 11px;
+			height: 11px;
+			background-color: transparent;
+			border: 1px solid currentColor;
+			border-radius: 50%;
+
+			&-active {
+				background-color: currentColor;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&::after {
+				// accessibility interaction spacing
+				content: "";
+				display: block;
+				height: 22px;
+				position: relative;
+				width: 100%;
+				z-index: 2;
+				top: -9px;
+			}
+		}
+	}
+}
+
+.editor-styles-wrapper {
+
+	.block--testimonials-wrapper {
+
+		.swiper,
+		.swiper-pagination {
+			display: none;
+		}
+	}
+}

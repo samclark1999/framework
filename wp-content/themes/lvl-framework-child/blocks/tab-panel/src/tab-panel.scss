@@ -1,0 +1,101 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--tab-panel {
+
+  @include media-breakpoint-down(md) {
+    display: block !important;
+    opacity: 1 !important;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 0 !important;
+    border-bottom: 1px solid var(--bs-primary);
+    color: inherit;
+
+    &:first-child {
+      border-top: 1px solid var(--bs-primary);
+    }
+  }
+
+  > .accordion-header {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    position: relative;
+    padding-right: 5rem;
+    color: var(--bs-primary) !important;
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+
+    &::after {
+      //content: url(escape-svg('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none"><path d="M11.4082 22.959L33.5913 22.959" stroke="#{$primary}"/><path d="M22.6758 12.043L22.6758 33.5218" stroke="#{$primary}"/><circle cx="22.5" cy="22.5" r="22" stroke="#{$primary}"/></svg>'));
+      content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='13' viewBox='0 0 22 13' fill='none'%3E%3Cpath d='M21 1.5L11 11.5L1 1.5' stroke='#{$primary}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E"));
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      transform-origin: center;
+      transition: transform .15s ease-out;
+    }
+
+    &[aria-expanded="true"] {
+
+      &::after {
+        //content: url(escape-svg('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none"><path d="M11.4082 22.959L33.5913 22.959" stroke="#{$primary}"/><circle cx="22.5" cy="22.5" r="22" stroke="#{$primary}"/></svg>'));
+        transform: rotateX(180deg) translateY(50%);
+      }
+    }
+  }
+
+  > .accordion-collapse {
+
+    @include media-breakpoint-up(md) {
+      display: block !important;
+    }
+
+    @include media-breakpoint-down(md) {
+      .accordion-body {
+        //padding-top: 3rem;
+      }
+    }
+  }
+
+
+  &.--preview {
+    display: flex !important;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    opacity: 1 !important;
+
+    &::before {
+      content: attr(data-title);
+      font-weight: 500;
+      flex: 0 0 20%;
+      border-bottom: 1px solid;
+      align-self: flex-start;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.editor-styles-wrapper {
+
+  .wp-block-lvl-tab-panel {
+    overflow: visible !important;
+  }
+
+  .block--tab-panel {
+    //display: flex !important;
+    //margin-bottom: 2rem;
+    //opacity: 1 !important;
+
+    //&::before {
+    //  content: attr(data-title);
+    //  //position: relative;
+    //  //left: -20%;
+    //  //top: 0;
+    //  font-weight: 700;
+    //}
+  }
+}

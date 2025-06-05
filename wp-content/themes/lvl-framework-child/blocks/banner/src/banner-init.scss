@@ -1,0 +1,45 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--banner {
+  --min-height: var(--hero-min-height, var(--banner-min-height, 400px));
+  position: relative;
+
+  min-height: calc(var(--min-height) * .5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    min-height: calc(var(--min-height) * .75);
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: var(--min-height)
+  }
+
+  .banner-content {
+    @include media-breakpoint-up(lg) {
+      max-width: var(--lg-max-width, 100%);
+    }
+  }
+
+  .banner-content--wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .banner-background {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .block--banner--wrapper {
+    flex: 0 0 100%;
+  }
+}

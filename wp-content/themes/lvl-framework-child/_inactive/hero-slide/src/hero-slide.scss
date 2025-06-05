@@ -1,0 +1,75 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--hero-slide {
+	position: relative;
+	height: auto !important;
+	background-color: var(--bs-body-color);
+	background-repeat: no-repeat !important;
+	// border-radius: 10px;
+	overflow: hidden;
+	transition-property: opacity;
+
+	.content {
+		position: relative;
+		height: 100%;
+
+		> * {
+			position: relative;
+			z-index: 1;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 0;
+			right: -6rem;
+			height: 100%;
+			width: 1920px;
+			background-color: rgba(var(--bs-primary-rgb), 0.9);
+			clip-path: polygon(95% 0, 100% 33%, 95% 100%, 0% 100%, 0% 0%);
+		}
+	
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 0;
+			right: -3rem;
+			height: 100%;
+			width: 1920px;
+			background: var(--bs-primary);
+			clip-path: polygon(95% 0, 100% 33%, 95% 100%, 0% 100%, 0% 0%);
+		}
+	}
+
+	.slide {
+		position: relative;
+		z-index: 1;
+		height: 100%;
+		max-width: 1600px;
+
+		.slide-image {
+			position: absolute;
+			display: block;
+			inset: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+
+			@include media-breakpoint-down(md) {
+				position: relative;
+				width: calc(100% + 3rem);
+				inset: 0 -1.5rem;
+			}
+		}
+	}
+}
+
+.editor-styles-wrapper {
+
+	.block--slide {
+		margin-bottom: 1rem;
+	}
+}

@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "lvl/pricing-table",
+    "title": "Pricing Table",
+    "version": "1.0.0",
+    "description": "Display a customizable pricing table",
+    "category": "lvl-blocks",
+    "keywords": [
+        "pricing",
+        "table",
+        "comparison"
+    ],
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M21 2H3c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM3 20V4h18v16H3zm4-3h2v-2H7v2zm0-4h2v-2H7v2zm0-4h2V7H7v2zm10 8h-6v-2h6v2zm0-4h-6v-2h6v2zm0-4h-6V7h6v2z\"/></svg>",
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "fullHeight": false,
+        "html": true,
+        "mode": false,
+        "color": {}
+    },
+    "style": [
+        "lvl-block-css-pricing-table"
+    ],
+    "viewScript": [
+        "lvl-block-js-pricing-table"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "pricing-table.php",
+        "blockVersion": 2
+    }
+}

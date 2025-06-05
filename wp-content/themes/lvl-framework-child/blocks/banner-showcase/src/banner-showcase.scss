@@ -1,0 +1,93 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+
+.block--banner-showcase {
+  --banner-showcase-min-height: 400px;
+  position: relative;
+  min-height: 50px;
+
+  //.banner-showcase-banners {
+  //  .block--banner {
+  //    &:nth-child(n+2) {
+  //      display: none;
+  //    }
+  //  }
+  //}
+
+  &:not(.--preview) {
+    .swiper {
+      &:not(.swiper-initialized) {
+        min-height: var(--banner-showcase-min-height);
+        overflow: hidden;
+        .block--banner {
+          width: 100%;
+        }
+        .block--banner:nth-child(n+2) {
+          display: none;
+        }
+        img {
+          display: none;
+        }
+
+        .swiper-button-prev, .swiper-button-next, .swiper-pagination {
+          display: none;
+        }
+
+        .banner-wrapper:nth-child(n + 2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .swiper {
+
+    .swiper-button-prev, .swiper-button-next {
+      background: transparent;
+      opacity: 0;
+      transition: background 0.25s, opacity 0.25s;
+
+      @include media-breakpoint-up(md) {
+        opacity: 1;
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      .swiper-button-prev, .swiper-button-next {
+        background: var(--bs-light);
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    z-index: 2;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+      //box-shadow: 0 0 0 1px var(--bs-dark);
+    }
+  }
+
+  .swiper-notification {
+    @include visually-hidden;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    width: 60px;
+    height: 80px;
+    color: var(--bs-dark);
+    transform: initial;
+  }
+
+  .block--banner {
+    //flex: 1 1 100%;
+  }
+
+  .block--banner--wrapper {
+    height: initial;
+  }
+}

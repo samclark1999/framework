@@ -1,0 +1,53 @@
+[data-bs-theme="light"] {
+	color: var(--wp--preset--color--dark);
+}
+
+[data-bs-theme="dark"] {
+	color: #fff;
+
+	a {
+		color: inherit;
+	}
+}
+
+[data-bs-theme="light"] {
+	a {
+		color: var(--bs-link-color);
+	}
+}
+
+@each $heading in $headings {
+	#{nth($heading,1)},
+	.#{nth($heading,1)} {
+		font-family: #{nth($heading,2)};
+		font-size: #{nth($heading,3)};
+		font-weight: #{nth($heading,4)};
+		line-height: #{nth($heading,5)};
+		color: #{nth($heading,6)};
+		margin-block-start: 0;
+		margin-block-end: 0;
+
+		&:not(:first-child) {
+			margin-block-start: var(--wp--style--block-gap);
+		}
+	}
+}
+
+[class*="has-heading-font-family"] {
+	font-weight: 600;
+}
+
+body {
+	font-variant-ligatures: none;
+}
+
+a {
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+strong {
+	font-weight: 600;
+}

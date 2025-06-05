@@ -1,0 +1,142 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--comparison-table {
+  --table-header-height: 75px;
+
+  .swiper-nav {
+    gap: 1rem;
+    width: fit-content;
+    margin: 1rem auto;
+
+    .swiper-arrow {
+      background-color: transparent;
+      border: 0;
+
+      svg {
+        margin: auto;
+        min-width: 1.5em;
+        min-height: 1.5em;
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+
+    //.swiper-pagination-bullet {
+    //  flex: 1 1 auto;
+    //  height: .5rem;
+    //  width: .5rem;
+    //  background-color: transparent;
+    //  border: 1px solid var(--wp--preset--color--primary);
+    //
+    //  &::after {
+    //    display: none;
+    //  }
+    //
+    //  &.swiper-pagination-bullet-active {
+    //    background-color: var(--wp--preset--color--primary);
+    //  }
+    //}
+  }
+
+  .comparison-table {
+    line-height: 1.25;
+
+    @include media-breakpoint-down(md) {
+      margin-left: calc(var(--bs-gutter-x) / -2);
+      margin-right: calc(var(--bs-gutter-x) / -2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+
+      &.overflowed {
+        td:first-child::before, th:first-child::before {
+          content: "";
+          width: 5px;
+          height: 100%;
+          box-shadow: 6px 0 6px 0 rgba(0, 0, 0, 0.15);
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: -1;
+        }
+      }
+    }
+
+    th, td {
+      padding: 20px 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th {
+      &.feature {
+        position: sticky;
+        left: 0;
+        z-index: 9;
+        text-align: left;
+        width: 40%;
+        border-bottom: 1px solid var(--wp--preset--color--secondary);
+      }
+
+      &.plan-header {
+        position: relative;
+        height: calc(var(--table-header-height) + .75rem);
+        padding: 0 5px .75rem;
+        font-size: var(--wp--preset--font-size--h-4);
+        font-weight: 600;
+        vertical-align: bottom;
+        border-bottom: 1px solid var(--wp--preset--color--secondary);
+
+        svg {
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    td {
+      &.feature {
+        font-size: var(--wp--preset--font-size--regular);
+        text-align: left;
+        padding: .5rem 5px .5rem 12px;
+        font-weight: 600;
+        border-top: 1px solid var(--wp--preset--color--gray-100);
+
+        @include media-breakpoint-down(md) {
+          font-weight: 400;
+        }
+      }
+
+      &.plan-feature {
+        display: table-cell;
+        text-align: center;
+        border-top: 1px solid var(--wp--preset--color--gray-100);
+        padding: 20px 6px;
+
+        svg {
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+
+.editor-styles-wrapper {
+  .acf-field-67eab68a80c36 .acf-table > tbody > tr:first-child > .acf-field-repeater {
+    border-bottom: 2px solid var(--wp--preset--color--secondary);
+
+    .acf-table {
+      border: 2px solid;
+    }
+  }
+
+  .block--comparison-table {
+  }
+}

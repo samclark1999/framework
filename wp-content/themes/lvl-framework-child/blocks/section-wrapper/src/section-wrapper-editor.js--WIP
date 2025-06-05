@@ -1,0 +1,43 @@
+// File: public/wp-content/themes/lvl-framework-child/blocks/section-wrapper/src/section-wrapper-editor.js
+
+wp.domReady(() => {
+    const {subscribe, select, dispatch} = wp.data;
+    let previousBlocks = select('core/block-editor').getBlocks();
+
+    console.log('Script loaded. Initial blocks:', previousBlocks);
+
+    subscribe(() => {
+        const {getBlocks} = select('core/block-editor');
+        const {updateBlockAttributes} = dispatch('core/block-editor');
+        const currentBlocks = getBlocks();
+
+        if (currentBlocks.length > previousBlocks.length) {
+            const newBlock = currentBlocks.find(block => !previousBlocks.some(prevBlock => prevBlock.clientId === block.clientId));
+            console.log('New block detected:', newBlock);
+
+            if (newBlock && newBlock.name === 'lvl/section-wrapper') {
+                console.log('New section-wrapper block detected. Current padding:', newBlock.attributes.style?.spacing?.padding);
+
+                if (!newBlock.attributes.style?.spacing?.padding ||
+                    newBlock.attributes.style.spacing.padding.top !== 'var:preset|spacing|40' ||
+                    newBlock.attributes.style.spacing.padding.bottom !== 'var:preset|spacing|40') {
+                    console.log('Setting padding to 40');
+                    updateBlockAttributes(newBlock.clientId, {
+                        style: {
+                            ...newBlock.attributes.style,
+                            spacing: {
+                                ...newBlock.attributes.style?.spacing,
+                                padding: {
+                                    top: 'var:preset|spacing|40',
+                                    bottom: 'var:preset|spacing|40'
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        previousBlocks = currentBlocks;
+    });
+});

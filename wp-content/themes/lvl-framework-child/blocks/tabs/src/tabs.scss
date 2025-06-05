@@ -1,0 +1,265 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--tabs {
+
+  .tabs-heading {
+    font-family: var(--bs-font-body), sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .tab-nav-col {
+    max-width: 40%;
+    min-width: 20%;
+
+    .nav-link {
+      white-space: wrap;
+      text-align: left;
+    }
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: none;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    &.nav-tabs-- {
+      //border-right: 1px solid currentColor;
+    }
+
+    .nav-item {
+
+      .nav-link {
+        &.btn-link {
+          font-size: 24px;
+          font-weight: 600;
+          padding-left: 16px;
+          padding-right: 46px;
+          width: 100%;
+          justify-content: space-between;
+          background: transparent;
+          border-radius: 12px 0 0 12px;
+
+          &::before, &::after {
+            right: 10px;
+            opacity: 0;
+            transition: opacity 0.15s ease-out;
+          }
+
+          &::before {
+            background-color: var(--wp--preset--color--primary);
+          }
+
+          &::after {
+            background-color: var(--wp--preset--color--white);
+          }
+
+          &.active, &:hover, &:focus, &:active {
+            background: var(--wp--preset--color--gray-100);
+            color: var(--wp--preset--color--dark);
+
+            &::before, &::after {
+              opacity: 1;
+              transition: opacity 0.5s ease-out;
+            }
+          }
+        }
+
+
+        //display: block;
+        //width: 100%;
+        //text-align: start;
+        //padding: 0;
+        //font-size: 18px;
+        //font-style: normal;
+        //font-weight: 300;
+        //line-height: 26px;
+        //position: relative;
+        //transition: font-weight 0.15s ease-out, padding 0.15s ease-out, color 0.15s ease-out;
+
+        //&::after {
+        //  content: "";
+        //  position: absolute;
+        //  display: block;
+        //  width: 100%;
+        //  height: 1px;
+        //  background-color: var(--bs-nav-link-color);
+        //  opacity: 0;
+        //  bottom: 0;
+        //  transition: opacity 0.15s ease-out, bottom 0.15s ease-out;
+        //}
+
+        //&.active,
+        //&:hover {
+        //  font-weight: 600;
+        //  color: var(--bs-nav-link-hover-color);
+        //}
+
+        //&.active {
+        //  padding-bottom: 24px;
+        //
+        //  &::after {
+        //    opacity: 1;
+        //    bottom: 12px;
+        //  }
+        //}
+
+      }
+    }
+  }
+}
+
+.mega-menu--wrapper {
+  .block--tabs {
+
+    .tab-content-col {
+      position: relative;
+
+      &::before {
+        content: "";
+        border-left: 1px solid var(--bs-gray-300);
+        position: absolute;
+        left: calc(var(--bs-gutter-x) * -0.5);
+        height: 100%;
+        display: none;
+      }
+
+      &.offset-xl-1::before {
+        @include media-breakpoint-up(xl) {
+          display: block;
+          left: calc(-8.33333333% * 0.5);
+        }
+      }
+    }
+
+    .nav {
+      gap: 6px;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
+      .nav-item {
+        position: relative;
+        white-space: wrap !important;
+
+        .nav-link {
+          font-size: 16px;
+          padding: 0 16px 10px 0;
+
+
+          //display: block;
+          //width: 100%;
+          //text-align: start;
+          //font-style: normal;
+          //font-weight: 300;
+          //line-height: 26px;
+          //position: relative;
+          //transition: font-weight 0.15s ease-out, padding 0.15s ease-out, color 0.15s ease-out;
+
+          &::after {
+            //  content: "";
+            //  position: absolute;
+            display: none;
+            //  width: 100%;
+            //  height: 1px;
+            //  background-color: var(--bs-blue);
+            //  opacity: 0;
+            //  bottom: 0;
+            //  transition: opacity 0.15s ease-out, bottom 0.15s ease-out;
+          }
+
+          &::before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='12' viewBox='0 0 8 12' fill='none'%3E%3Cpath d='M0.999999 11L6 6L1 1' stroke='%23007AB0' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E");
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 8px;
+            height: 26px;
+          }
+
+          &.active,
+          &:hover {
+            //font-weight: 600;
+            color: var(--bs-blue);
+          }
+
+          &.active {
+            padding-bottom: 10px;
+
+            &::after {
+              //opacity: 1;
+              bottom: 6px;
+            }
+
+            .tab-title {
+              &::after {
+                opacity: 1;
+                bottom: -6px;
+              }
+            }
+
+          }
+        }
+
+        .tab-title {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: var(--bs-blue);
+            opacity: 0;
+            bottom: -6px;
+            transition: opacity 0.15s ease-out, bottom 0.15s ease-out;
+          }
+
+          //&::after {
+          //  opacity: 1;
+          //  bottom: 6px;
+          //}
+        }
+      }
+    }
+  }
+}
+
+.editor-styles-wrapper {
+
+  .block--tabs {
+    &.--preview {
+      border-left: 2px solid var(--wp--preset--color--primary);
+    }
+
+    .nav-tabs {
+      border: none;
+    }
+
+    // .acf-innerblocks-container {
+    // 	position: unset;
+
+    // 	.wp-block-lvl-tab-panel {
+    // 		position: unset;
+    // 		overflow: visible;
+    // 	}
+
+    // 	.block--tab-panel {
+
+    // 		&::before {
+    // 			content: attr(data-title);
+    // 			position: absolute;
+    // 			left: -20%;
+    // 			top: 0;
+    // 			font-weight: 700;
+    // 		}
+    // 	}
+    // }
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "key": "group_655baaeaa94ed",
+    "title": "Block - Tab Pane",
+    "fields": [
+        {
+            "key": "field_655baaee0e479",
+            "label": "Tab Navigation Label",
+            "name": "tab_navigation_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This is the text that will show on the tab that opens this content pane.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "lvl\/tab-pane"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1700506849
+}

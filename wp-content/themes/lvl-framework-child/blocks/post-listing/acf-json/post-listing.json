@@ -1,0 +1,542 @@
+{
+  "key": "group_6596f5231c0e0",
+  "title": "Block - Post Listing",
+  "fields": [
+    {
+      "key": "field_6596f612762a3",
+      "label": "Source",
+      "name": "post_types",
+      "aria-label": "",
+      "type": "checkbox",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "post": "Posts",
+        "case-study": "Case Studies",
+        "event": "Events",
+        "landing-page": "Landing Pages",
+        "location": "Locations",
+        "team-member": "Team Members"
+      },
+      "default_value": [],
+      "return_format": "value",
+      "allow_custom": 0,
+      "layout": "vertical",
+      "toggle": 1,
+      "save_custom": 0,
+      "custom_choice_button_text": "Add new choice"
+    },
+    {
+      "key": "field_taxonomies_pre_filter_key",
+      "label": "Pre Filter Taxonomies",
+      "name": "taxonomies_pre_filter",
+      "aria-label": "",
+      "type": "checkbox",
+      "instructions": "If filtering is enable this will be ignored.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": [],
+      "default_value": [],
+      "return_format": "value",
+      "allow_custom": 0,
+      "allow_in_bindings": 1,
+      "layout": "vertical",
+      "toggle": 0,
+      "save_custom": 0,
+      "custom_choice_button_text": "Add new choice"
+    },
+    {
+      "key": "field_terms_pre_filter_key",
+      "label": "Pre Filter Terms",
+      "name": "terms_pre_filter",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Pre filter is inclusive. <em>If filtering is enable this will be ignored.</em>",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": [],
+      "default_value": [],
+      "return_format": "value",
+      "multiple": 1,
+      "allow_null": 0,
+      "allow_in_bindings": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_post_listing_event_status",
+        "label": "Event Status",
+        "name": "event_status",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+            {
+                "field": "field_6596f612762a3",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+        },
+        "choices": {
+            "active": "Active",
+            "upcoming": "Upcoming",
+            "past": "Past"
+        },
+        "default_value": ["active", "upcoming"],
+        "allow_null": 0,
+        "multiple": 1,
+        "ui": 1,
+        "return_format": "value"
+    },
+    {
+      "key": "field_post_listing_disable_clickable",
+        "label": "Disable Card Click",
+        "name": "is_disable_click",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+            {
+                "field": "field_6596f612762a3",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+        },
+        "message": "",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+    },
+    {
+      "key": "field_post_listing_6596f523762a4",
+      "label": "Display Count",
+      "name": "per_page",
+      "aria-label": "",
+      "type": "number",
+      "instructions": "Number of posts to display per page. -1 to show all. 0 to use the default.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 12,
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "min": -1,
+      "max": "",
+      "step": 1
+    },
+    {
+      "key": "field_post_listing_accordion_featured",
+      "label": "Featured Posts",
+      "name": "featured_accordion",
+      "aria-label": "",
+      "type": "accordion",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "open": 0,
+      "multi_expand": 0,
+      "endpoint": 0
+    },
+    {
+      "key": "field_66314d9ec6bd0",
+      "label": "Select Featured Posts",
+      "name": "featured_posts",
+      "aria-label": "",
+      "type": "relationship",
+      "instructions": "Specify items to show first in the listing.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "relevanssi_exclude": 0,
+      "post_type": "",
+      "post_status": [
+        "publish"
+      ],
+      "taxonomy": "",
+      "filters": [
+        "search",
+        "post_type",
+        "taxonomy"
+      ],
+      "return_format": "id",
+      "min": "",
+      "max": "",
+      "elements": "",
+      "bidirectional": 0,
+      "bidirectional_target": []
+    },
+    {
+      "key": "field_post_listing_accordion_customization",
+      "label": "Customization",
+      "name": "customization_accordion",
+      "aria-label": "",
+      "type": "accordion",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "open": 0,
+      "multi_expand": 0,
+      "endpoint": 0
+    },
+    {
+      "key": "post_listing_pagination",
+      "label": "Pagination",
+      "name": "pagination",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "none": "None",
+        "pages": "Pages",
+        "load_more": "Load More"
+      },
+      "ui": 1,
+      "allow_null": 0,
+      "other_choice": 0,
+      "default_value": "none",
+      "layout": "",
+      "return_format": "value"
+    },
+    {
+        "key": "field_post_listing_randomize",
+        "label": "Randomize",
+        "name": "randomize",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Randomize the order of the posts. Only applies when pagination is set to 'None'.",
+        "required": 0,
+        "conditional_logic": [
+            {
+                "field": "post_listing_pagination",
+                "operator": "==",
+                "value": "none"
+            }
+        ],
+        "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+        },
+        "message": "",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+    },
+    {
+      "key": "field_6596f523762a2",
+      "label": "Enable Filter",
+      "name": "show_filter",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "Display filters for taxonomies and search",
+      "default_value": 0,
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_post_listing_show_result_count",
+      "label": "Show Result Count",
+      "name": "show_result_count",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "Display the number of results found",
+      "default_value": 0,
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_6596f63a762a4",
+      "label": "Filters for",
+      "name": "taxonomies",
+      "aria-label": "",
+      "type": "checkbox",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        {
+          "field": "field_6596f523762a2",
+          "operator": "==",
+          "value": "1"
+        }
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "category": "Categories<em> (Posts\/Events)<\/em>",
+        "resource_type": "Resource Types<em> (Posts\/Events)<\/em>",
+        "solution": "Solutions<em> (Posts\/Events)<\/em>",
+        "vendor_name": "Vendors<em> (Posts\/Events)<\/em>",
+        "event_type": "Event Types<em> (Events)<\/em>",
+        "landing_page_type": "LP Types<em> (Landing Pages)<\/em>",
+        "team-type": "Team Member Types<em> (Team Members)<\/em>"
+      },
+      "default_value": [],
+      "return_format": "value",
+      "allow_custom": 0,
+      "layout": "vertical",
+      "toggle": 0,
+      "save_custom": 0,
+      "custom_choice_button_text": "Add new choice"
+    },
+    {
+      "key": "field_post_listing_accordion_layout",
+      "label": "Layout",
+      "name": "layout_accordion",
+      "aria-label": "",
+      "type": "accordion",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "open": 0,
+      "multi_expand": 0,
+      "endpoint": 0
+    },
+    {
+      "key": "field_post_listing_display_options_key",
+      "label": "Components",
+      "name": "display_options",
+      "aria-label": "",
+      "type": "checkbox",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "author": "Author",
+        "meta": "Meta",
+        "date": "Date",
+        "excerpt": "Excerpt",
+        "featured_image": "Featured Image",
+        "link": "Link"
+      },
+      "default_value": [
+        "excerpt",
+        "link",
+        "categories",
+        "featured_image"
+      ],
+      "return_format": "value",
+      "allow_custom": 0,
+      "layout": "vertical",
+      "toggle": 0,
+      "save_custom": 0,
+      "custom_choice_button_text": "Add new choice"
+    },
+    {
+      "key": "field_post_listing_link_text",
+      "label": "Link Text",
+      "name": "link_text",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "Text to display for the link",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Learn More",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_post_listing_card_layout",
+      "label": "Card Layout",
+      "name": "card_layout",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "row": "Horizontal",
+        "column": "Vertical"
+      },
+      "default_value": "column",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+        "key": "field_677ab0af7878d",
+        "label": "First Post Featured?",
+        "name": "first_post_featured",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+        },
+        "message": "",
+        "default_value": 0,
+        "allow_in_bindings": 0,
+        "ui_on_text": "",
+        "ui_off_text": "",
+        "ui": 1
+    },
+    {
+      "key": "field_post_listing_card_per_row",
+      "label": "Cards Per Row",
+      "name": "cards_per_row",
+      "aria-label": "",
+      "type": "number",
+      "instructions": "Number of cards to display per row",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 3,
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "min": 1,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "key": "field_post_listing_card_min_height",
+      "label": "Image Min Height",
+      "name": "min_height",
+      "aria-label": "",
+      "type": "number",
+      "instructions": "Set the height of the image in pixels. Set to 0 for auto height.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": "px",
+      "min": 0,
+      "max": "",
+      "step": 1
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "lvl\/post-listing"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1714507235
+}

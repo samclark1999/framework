@@ -1,0 +1,127 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--accordion-panel {
+	//padding: 0 2rem;
+	border: 0;
+	border-radius: 0 !important;
+	border-top: 1px solid var(--wp--preset--color--gray-100);
+	color: inherit;
+	transition: border-top 0.15s ease-out, color 0.15s ease-out;
+
+	&.accordion-item {
+		border-left: 0;
+		border-right: 0;
+		--bs-accordion-bg: transparent !important;
+	}
+
+	&:has(.collapse.show, .collapsing) {
+		border-top: 1px solid var(--wp--preset--color--secondary);
+	}
+
+	&.block:last-child {
+		border-bottom: 1px solid var(--wp--preset--color--gray-100);
+	}
+
+	.accordion-header {
+		position: relative;
+		padding: 22px calc(16px + 1.5em) 22px 0;
+		//color: var(--bs-primary);
+		background: transparent;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 120%;
+		transition: background 0.15s ease-out, color 0.15s ease-out;
+
+		@include media-breakpoint-up(md) {
+			padding: 22px calc(36px + 1.5em) 22px 0;
+			font-size: 24px;
+		}
+
+		&::before {
+			content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='none'%3E%3Cpath d='M15 8V22' stroke='#{$primary}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='square'/%3E%3Cpath d='M22 15H8' stroke='#{$primary}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='square'/%3E%3C/svg%3E"));
+			//background-position: center;
+			//background-repeat: no-repeat;
+			//background-size: contain;
+			//background-image: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='13' viewBox='0 0 22 13' fill='none'%3E%3Cpath d='M21 1.5L11 11.5L1 1.5' stroke='#{$primary}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E"));
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			height: 1.5em;
+			width: 1.5em;
+			transition: transform 0.15s ease-out;
+			transform-origin: center;
+
+			@include media-breakpoint-up(lg) {
+				right: 32px;
+			}
+		}
+
+		@at-root {
+			[data-bs-theme="dark"] {
+				.accordion-header {
+					&::before {
+						content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='none'%3E%3Cpath d='M15 8V22' stroke='#{$light}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='square'/%3E%3Cpath d='M22 15H8' stroke='#{$light}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='square'/%3E%3C/svg%3E"));
+					}
+
+					&[aria-expanded="true"] {
+						&::before {
+							content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='none'%3E%3Cpath d='M22 15H8' stroke='#{$light}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='square'/%3E%3C/svg%3E"));
+						}
+					}
+				}
+			}
+		}
+
+		&[aria-expanded="true"] {
+			&::before {
+				content: url(escape-svg("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='none'%3E%3Cpath d='M22 15H8' stroke='#{$primary}' stroke-width='2' stroke-miterlimit='10' stroke-linecap='square'/%3E%3C/svg%3E"));
+			}
+		}
+	}
+
+	.accordion-body {
+		padding: .5rem 0 1rem;
+	}
+
+	@at-root {
+		.block--accordion.is-style-inline-block {
+			.accordion-header {
+				@include media-breakpoint-up(md) {
+					display: inline-block;
+					padding: 11px calc(10px + 1.5em) 11px 0;
+				}
+
+				&::before {
+					right: 0;
+				}
+
+				&::after {
+					content: "";
+					width: 100%;
+					border-bottom: 4px solid var(--bs-secondary);
+					z-index: 1;
+					position: relative;
+					display: block;
+				}
+			}
+		}
+	}
+	
+}
+
+.editor-styles-wrapper {
+
+	.block--accordion-panel {
+		margin-bottom: 2rem;
+
+		.accordion-collapse {
+			display: block !important;
+		}
+
+		.accordion-body {
+			padding: 1rem 5rem 1rem 0;
+		}
+	}
+}

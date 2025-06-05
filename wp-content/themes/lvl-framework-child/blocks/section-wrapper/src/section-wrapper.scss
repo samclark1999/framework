@@ -1,0 +1,139 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--section-wrapper {
+
+	&.is-style-overlay-50-dark {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(14, 24, 50, 0.78);
+
+			@include media-breakpoint-up(md) {
+				background: linear-gradient(90deg, rgba(14, 24, 50, 0.78) 34%, rgba(14, 24, 50, 0.00) 64%);
+			}
+		}
+	}
+
+	&.is-style-overlay-50-light {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.78);
+
+			@include media-breakpoint-up(md) {
+				background: linear-gradient(90deg, rgba(255, 255, 255, 0.78) 34%, rgba(255, 255, 255, 0.00) 64%);
+			}
+		}
+	}
+
+	&.is-style-overlay-50-dark--right {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(14, 24, 50, 0.78);
+
+			@include media-breakpoint-up(md) {
+				background: linear-gradient(-90deg, rgba(14, 24, 50, 0.78) 34%, rgba(14, 24, 50, 0.00) 64%);
+			}
+		}
+	}
+
+	&.is-style-overlay-50-light--right {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.78);
+
+			@include media-breakpoint-up(md) {
+				background: linear-gradient(-90deg, rgba(255, 255, 255, 0.78) 34%, rgba(255, 255, 255, 0.00) 64%);
+			}
+		}
+	}
+
+	&::before {}
+
+
+	&.alignfull {}
+
+	&.alignleft {}
+
+	&.alignright {}
+
+	&.aligncenter {}
+
+	.wp-block-columns {
+		margin: 0;
+
+		&:not(.is-not-stacked-on-mobile) {
+			@include media-breakpoint-down(lg) {
+				// TODO: Review
+				flex-wrap: wrap !important;
+			}
+		}
+	}
+
+	[data-stretchedbackground] {
+
+		// TODO: Review
+		&::before {
+			content: "";
+			background: inherit;
+			width: 100vw;
+			height: 100%;
+			left: calc((100% - 100vw) * .5);
+			position: absolute;
+			top: 0;
+		}
+	}
+
+	//&.has-background {
+	//
+	//	&::before {
+	//		content: '';
+	//		position: absolute;
+	//		top: 0;
+	//		right: 0;
+	//		height: 100%;
+	//		width: 100vw;
+	//		background-color: inherit;
+	//	}
+	//}
+}
+
+.wp-block-lvl-section-wrapper {
+	float: none !important;
+}
+
+.editor-styles-wrapper {
+
+	.wp-block-lvl-section-wrapper {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+
+		&[style*="background-color"] {
+
+			.block--section-wrapper {
+				background-color: transparent !important;
+			}
+
+		}
+	}
+}

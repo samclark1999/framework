@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "lvl/cta",
+  "title": "Cta",
+  "version": "1.0.0",
+  "description": "Stylized Call to Action block",
+  "category": "lvl-blocks",
+  "keywords": [
+    "cta"
+  ],
+  "icon": "megaphone",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "fullHeight": false,
+    "html": true,
+    "mode": false,
+    "color": {}
+  },
+  "style": "lvl-block-css-cta",
+  "viewScript": ["lvl-block-js-cta"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "cta.php",
+    "blockVersion": 2
+  }
+}

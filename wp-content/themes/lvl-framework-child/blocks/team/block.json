@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lvl/team",
+	"title": "Team Member Listing",
+	"version": "1.0.0",
+	"description": "Display team members with or without filters",
+	"category": "lvl-blocks",
+	"keywords": [
+		"staff",
+		"team",
+		"employee",
+		"member"
+	],
+	"icon": "<svg viewBox=\"0 0 640 512\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"m72 88a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm-8 157.7c-10 11.2-16 26.1-16 42.3s6 31.1 16 42.3zm144.4-49.3c-29.7 26.3-48.4 64.8-48.4 107.6 0 34.3 12 65.8 32 90.5v21.5c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32v-26.8c-37.8-18-64-56.5-64-101.2 0-61.9 50.1-112 112-112h32c24 0 46.2 7.5 64.4 20.3zm239.6 219.6v-21.5c20-24.7 32-56.2 32-90.5 0-42.8-18.7-81.3-48.4-107.7 18.2-12.8 40.4-20.3 64.4-20.3h32c61.9 0 112 50.1 112 112 0 44.7-26.2 83.2-64 101.2v26.8c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zm8-328a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm120 157.7v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zm-256-213.7a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm-80 272c0 16.2 6 31 16 42.3v-84.6c-10 11.3-16 26.1-16 42.3zm144-42.3v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zm64 42.3c0 44.7-26.2 83.2-64 101.2v42.8c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32v-42.8c-37.8-18-64-56.5-64-101.2 0-61.9 50.1-112 112-112h32c61.9 0 112 50.1 112 112z\"\/><\/svg>",
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"fullHeight": false,
+		"html": false,
+		"mode": false
+	},
+	"style": [
+		"lvl-block-css-team",
+		"lvl-swiper"
+	],
+	"viewScript": [
+		"lvl-block-js-team",
+		"lvl-swiper"
+	],
+	"acf": {
+        "mode": "preview",
+        "renderTemplate": "team.php",
+		"blockVersion": 2
+    }
+}

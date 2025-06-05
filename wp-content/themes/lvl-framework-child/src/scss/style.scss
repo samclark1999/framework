@@ -1,0 +1,38 @@
+// BOOTSTRAP ESSENTIALS + CUSTOMIZATION
+@import "bare-bs-necessities";
+
+// COMPONENTS
+@import "components/_utility";
+@import "components/_wordpress";
+@import "components/_typography";
+@import "components/_buttons";
+@import "components/_forms";
+@import "components/_base";
+@import "components/_navigation";
+@import "components/_pagination";
+@import "components/_blocks";
+@import "components/_header";
+@import "components/_footer";
+@import "components/_search";
+@import "components/_singles";
+@import "components/_table";
+// @import "components/_migrated";
+
+:root {
+  font-size: 18px;
+  width: 100vw;
+}
+
+// Salesforce Embedded Service
+.embeddedServiceHelpButton {
+
+	.helpButton {
+
+		.uiButton {
+
+			.embeddedServiceIcon {
+				position: absolute;
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "lvl/banner",
+  "title": "Banner",
+  "version": "1.0.0",
+  "description": "Banner that can be scheduled and displayed within a Hero",
+  "category": "lvl-blocks",
+  "keywords": [
+    "banner",
+    "hero"
+  ],
+  "icon": "format-image",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "fullHeight": false,
+    "html": true,
+    "mode": false,
+    "color": {}
+  },
+  "style": [
+    "lvl-block-css-banner"
+  ],
+  "editorScript": [
+    "lvl-block-js-banner-editor"
+  ],
+  "viewScript": [
+    "lvl-block-js-banner"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "banner.php",
+    "blockVersion": 2
+  }
+}

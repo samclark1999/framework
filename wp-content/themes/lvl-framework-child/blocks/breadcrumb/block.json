@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "lvl/breadcrumb",
+  "title": "Breadcrumb",
+  "version": "1.0.0",
+  "description": "Display a breadcrumb navigation",
+  "category": "lvl-blocks",
+  "keywords": [
+    "breadcrumb"
+  ],
+  "icon": "arrow-right-alt2",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "fullHeight": false,
+    "html": true,
+    "mode": false,
+    "color": {}
+  },
+  "style": "lvl-block-css-breadcrumb",
+  "viewScript": ["lvl-block-js-breadcrumb"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "breadcrumb.php",
+    "blockVersion": 2
+  }
+}

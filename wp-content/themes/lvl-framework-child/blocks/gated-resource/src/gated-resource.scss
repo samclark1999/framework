@@ -1,0 +1,31 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--gated-resource {
+  position: relative;
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+
+    opacity: 0.25;
+    animation: fade-in 0.5s infinite alternate;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: .25;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

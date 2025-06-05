@@ -1,0 +1,100 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--card {
+
+	// --block-card-width: 100%;
+	--block-card-border-width: 1px;
+	--block-card-border-style: solid;
+	--block-card-border-color: var(--bs-gray-100);
+	--block-card-outline-color: var(--bs-gray-300);
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	// width: var(--block-card-width) !important;
+	height: auto !important;
+	border-width: var(--block-card-border-width);
+	border-color: var(--block-card-border);
+	border-style: var(--block-card-border-style);
+	// border-radius: .5rem;
+	overflow: hidden;
+
+	&:not(.has-background) {
+		//background-color: var(--bs-white);
+	}
+
+	&[data-lvl-stretch-link="true"] {
+		outline: 2px solid transparent;
+		transition: outline-color .25s ease-in-out;
+
+		&:hover,
+		&:focus-within {
+			cursor: pointer;
+			outline-color: var(--block-card-outline);
+			transition: outline-color .25s ease-in-out;
+		}
+	}
+
+	&[data-banner-image="true"] {
+
+		.wp-block-image {
+
+			&:first-child {
+				width: var(--block-card-width) !important;
+				margin-top: calc(var(--block-card-padding-top) / -1);
+				margin-left: calc(var(--block-card-padding-left) / -1);
+				margin-right: calc(var(--block-card-padding-right) / -1);
+			}
+		}
+	}
+}
+
+.editor-styles-wrapper {
+
+	.wp-block-lvl-card {
+		padding: 0 !important;
+		background-color: transparent !important;
+		box-shadow: none !important;
+	}
+
+	.block--card {
+		width: 100% !important;
+		height: 100% !important;
+		border: 1px solid var(--block-card-border);
+		border-radius: .5rem;
+		overflow: hidden;
+
+		.acf-innerblocks-container {
+			display: flex;
+			flex-direction: column;
+		}
+
+
+		.card {
+			height: 100%;
+			min-width: initial;
+			background-color: transparent;
+			border: none;
+			color: inherit;
+
+			&.has-banner>div:first-child>.wp-block-image:first-child {
+				margin: calc(-1 * var(--bs-spacer-3, 1rem)) calc(-1 * var(--bs-spacer-3, 1rem)) 1rem;
+
+				> div:first-child {
+					width: 100% !important;
+
+					&[style*="height: auto"] {
+						// height: 150px !important;
+					}
+
+					> img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						object-position: center;
+					}
+				}
+			}
+		}
+	}
+}

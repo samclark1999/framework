@@ -1,0 +1,108 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--cards-wrapper {
+
+	--block-cards-wrapper-bullet: transparent;
+	--block-cards-wrapper-bullet-active: currentColor;
+	--block-cards-wrapper-bullet-border: currentColor;
+	--block-cards-wrapper-bullet-size: 12px;
+	--block-cards-wrapper-bullet-spacing: 1rem;
+
+	--card-count: 4;
+
+	@include media-breakpoint-down(lg) {
+		--card-count: 2 !important;
+	}
+
+	@include media-breakpoint-down(md) {
+		--card-count: 1 !important;
+	}
+
+	&:not([data-mobile="slider"]) {
+
+		.cards {
+			display: grid;
+			grid-template-columns: repeat( var(--card-count), 1fr);
+			grid-auto-flow: row;
+			gap: var(--bs-gutter-x);
+		}
+	}
+
+	.cards {
+
+		@include media-breakpoint-up(md) {
+			display: grid;
+			grid-template-columns: repeat( var(--card-count), 1fr);
+			grid-auto-flow: row;
+			gap: var(--bs-gutter-x);
+		}
+	}
+
+	.swiper {
+		margin-left: calc(var(--bs-gutter-x) / -2);
+		margin-right: calc(var(--bs-gutter-x) / -2);
+		padding: calc(var(--bs-gutter-x) / 2);
+	}
+
+	.swiper-pagination {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: var(--block-cards-wrapper-bullet-spacing);
+		margin-top: 1rem;
+
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+
+		.swiper-pagination-bullet {
+			position: relative;
+			display: inline-block;
+			flex: 0 0 var(--block-cards-wrapper-bullet-size);
+			height: var(--block-cards-wrapper-bullet-size);
+			width: var(--block-cards-wrapper-bullet-size);
+			background-color: var(--block-cards-wrapper-bullet);
+			border: 1px solid var(--block-cards-wrapper-bullet-border);
+			border-radius: 50%;
+
+			&:hover,
+			&-active {
+				background-color: var(--block-cards-wrapper-bullet-active);
+			}
+
+			&::after {
+				// accessibility interaction spacing
+				content: "";
+				display: block;
+				height: 22px;
+				position: relative;
+				width: 100%;
+				z-index: 2;
+				top: -9px;
+			}
+		}
+	}
+}
+
+.editor-styles-wrapper {
+
+	.block--cards-wrapper {
+		
+		.cards {
+			display: block;
+
+			> .acf-innerblocks-container {
+				display: grid;
+				grid-template-columns: repeat( var(--card-count), 1fr);
+				grid-auto-flow: row;
+				gap: calc(var(--bs-gutter-x) / 2);
+				padding: 2rem 0;
+			}
+		}
+
+		.swiper,
+		.swiper-pagination {
+			display: none;
+		}
+	}
+}

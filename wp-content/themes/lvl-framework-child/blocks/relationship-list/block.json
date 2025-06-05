@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "lvl/relationship-list",
+  "title": "Relationship List",
+  "version": "1.0.0",
+  "description": "Display a relationship list.",
+  "category": "lvl-blocks",
+  "keywords": [
+    "relationship list"
+  ],
+  "icon": "list-view",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "fullHeight": false,
+    "html": true,
+    "mode": false,
+    "color": {}
+  },
+  "style": [
+    "lvl-block-css-relationship-list"
+  ],
+  "viewScript": [
+    "lvl-block-js-relationship-list"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "relationship-list.php",
+    "blockVersion": 2
+  }
+}

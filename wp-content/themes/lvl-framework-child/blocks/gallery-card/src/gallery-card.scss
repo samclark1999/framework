@@ -1,0 +1,164 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--gallery-card {
+	--card-width: 100%;
+
+	.gallery-inner>& {
+		flex: 1 1 var(--card-width, 100%);
+		max-width: var(--card-width, 100%);
+		align-self: stretch;
+		//height: auto !important;
+		padding: 0 calc(.5 * var(--bs-gutter-x));
+
+		@include media-breakpoint-up(md) {
+			--card-width: 50%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			--card-width: calc(100% / (var(--card-count, 4) - 1))
+		}
+
+		@include media-breakpoint-up(xl) {
+			--card-width: calc(100% / var(--card-count, 4));
+		}
+	}
+
+	.card-inner {
+		position: relative;
+		height: calc(100% - 2px);
+		margin-top: 0;
+		//background-color: var(--bs-light);
+		//border-radius: .5rem;
+		box-shadow: none;
+		overflow: hidden;
+		transform: scale(1);
+		transition: transform .15s ease-in-out, box-shadow .3s ease-in-out;
+		backface-visibility: hidden;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			max-height: 80vh;
+			max-width: min(100%, 50vw) !important;
+			object-fit: contain;
+		}
+
+		&.linked {
+
+			&:hover,
+			&:focus-within {
+				cursor: pointer;
+				box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+				transition: transform .15s ease-in-out, box-shadow .15s ease-in-out;
+
+				&:not(.has-background) {
+					transform: scale(1.025);
+				}
+			}
+
+			&:focus-within {}
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		.wp-block-image {
+			img {}
+		}
+
+		p {
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		a {
+			color: var(--bs-dark);
+			font-weight: bold;
+
+			&.--card-link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				inset: 0;
+				opacity: 0;
+				text-align: center;
+				transition: opacity .15s ease-in-out;
+				z-index: 1;
+
+				span {
+					position: relative;
+					z-index: 2;
+				}
+
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					inset: 0;
+					background-color: var(--bs-gray-200);
+					opacity: .9;
+					z-index: 1;
+				}
+			}
+		}
+
+		&:hover,
+		&:focus {
+			.--card-link {
+				opacity: 1;
+			}
+		}
+
+		.wp-block-button {
+			.wp-element-button {
+				padding: .25rem .5rem;
+				font-size: .75rem;
+				border-width: 1px;
+			}
+		}
+
+		.wp-block-image {}
+	}
+
+	.wp-block-heading.has-background {
+		padding: .5em 1em;
+		margin: 0 calc(-1 * var(--bs-spacer-3, -1rem));
+	}
+}
+
+.editor-styles-wrapper {
+	.wp-block-lvl-gallery-card {
+
+		//display: flex;
+		// * {
+		// 	max-width: 100% !important;
+		// }
+
+		// img {
+		// 	display: block;
+		// 	margin-left: auto;
+		// 	margin-right: auto;
+		// 	max-height: 80vh;
+		// 	max-width: min(100%, 50vw) !important;
+		// 	object-fit: contain;
+		// }
+	}
+
+	.block--gallery-card {
+		height: 100%;
+
+		.card-inner {
+			min-width: initial;
+			border: 0;
+		}
+	}
+}

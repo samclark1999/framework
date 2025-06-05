@@ -1,0 +1,55 @@
+{
+  "key": "group_breadcrumb",
+  "title": "Block - Breadcrumb",
+  "fields": [
+    {
+      "key": "field_breadcrumb_header_level",
+      "label": "Header Level",
+      "name": "header_level",
+      "type": "select",
+      "instructions": "Select the header level for the current page breadcrumb.",
+      "required": 1,
+      "choices": {
+        "span": "SPAN",
+        "h1": "H1",
+        "h2": "H2",
+        "h3": "H3",
+        "h4": "H4",
+        "h5": "H5",
+        "h6": "H6"
+      },
+      "default_value": "span",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "ajax": 0,
+      "return_format": "value",
+      "placeholder": "",
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "relevanssi_exclude": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "lvl\/breadcrumb"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1713820075
+}

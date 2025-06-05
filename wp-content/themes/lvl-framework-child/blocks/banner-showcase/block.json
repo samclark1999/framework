@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "lvl/banner-showcase",
+  "title": "Banner Showcase",
+  "version": "1.0.0",
+  "description": "Schedule Banners to display in a carousel.",
+  "category": "lvl-blocks",
+  "keywords": [
+    "banner-showcase",
+    "banner"
+  ],
+  "icon": "images-alt2",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "fullHeight": true,
+    "html": true
+  },
+  "style": [
+    "lvl-block-css-banner-showcase",
+    "lvl-swiper"
+  ],
+  "viewScript": [
+    "lvl-block-js-banner-showcase",
+    "lvl-swiper"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "banner-showcase.php",
+    "blockVersion": 2
+  }
+}

@@ -1,0 +1,91 @@
+@import '../../../src/scss/bare-bs-necessities'; // required in order to use our other variables, mixins, etc.
+
+.block--section-separator {
+  position: relative;
+  z-index: -1;
+  pointer-events: none;
+
+  > figure {
+    position: absolute;
+    top: -50%;
+    transform: translateY(-50%);
+
+    float: none !important;
+    z-index: 0;
+
+    &.alignwide {
+      left: 0;
+      right: 0;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      transform: translateX(0);
+      z-index: 1;
+
+      > img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        object-fit: contain;
+      }
+    }
+
+    &.alignleft {
+      left: 0;
+    }
+
+    &.alignright {
+      right: 0;
+    }
+
+    &.aligncenter {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+
+}
+
+.editor-styles-wrapper {
+  .block--section-separator {
+    z-index: 1;
+    pointer-events: auto;
+    figure {
+      position: relative;
+      float: none !important;
+
+
+      &.alignfull {
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        transform: translateX(0);
+        z-index: 1;
+
+        > img {
+          width: 100%;
+          height: auto;
+          max-width: none;
+          object-fit: contain;
+        }
+      }
+
+      &.alignleft {
+        margin-right: auto;
+      }
+
+      &.alignright {
+        margin-left: auto;
+      }
+
+      &.aligncenter {
+        margin: auto;
+      }
+    }
+  }
+}
